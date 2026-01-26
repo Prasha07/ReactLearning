@@ -1,0 +1,23 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "this is a bundler course",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "Prashant"
+  ],
+  "author": "Prashant",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.16.3"
+  },
+  "dependencies": {
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  },
+  "browserlist": [
+    "last 2 vwersions"
+  ]
+}
