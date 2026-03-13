@@ -3,6 +3,7 @@ import { Constants } from "./Constants";
 import { restaurantList } from "./Constants";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./shimmer";
+import { Link } from "react-router-dom";
 
 function filterData(searchText, restaurants) {
   return restaurants.filter((restaurant) =>
@@ -25,14 +26,14 @@ const Body = () => {
     // );
     // const json = await data.json();
     // console.log(json);
-    // setTimeout(() => {
-    //   setRestaurants(restaurantList);
-    //   setAllrestaurants(restaurantList);
-    //   setFilteredrestaurants(restaurantList);
-    // }, 2000);
+    setTimeout(() => {
+      // setRestaurants(restaurantList);
+      setAllrestaurants(restaurantList);
+      setFilteredrestaurants(restaurantList);
+    }, 2000);
     // setRestaurants(restaurantList);
-    setAllrestaurants(restaurantList);
-    setFilteredrestaurants(restaurantList);
+    // setAllrestaurants(restaurantList);
+    // setFilteredrestaurants(restaurantList);
   }
   if (!allRestaurants) return null;
   return allRestaurants.length === 0 ? (
@@ -63,7 +64,11 @@ const Body = () => {
       </div>
       <div className="restaurant-list">
         {filteredrestaurants.map((restaurant, index) => {
-          return <RestaurantCard {...restaurant} key={"a" + index} />;
+          return (
+            <Link to={"restaurant/" + 2} key={"a" + index}>
+              <RestaurantCard {...restaurant} />
+            </Link>
+          );
         })}
       </div>
     </>
