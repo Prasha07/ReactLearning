@@ -11,9 +11,6 @@ const RestaurantMenu = () => {
   useEffect(() => {
     getRestaurantInfo();
   }, []);
-  if (!restaurant) {
-    return <Shimmer />;
-  }
 
   async function getRestaurantInfo() {
     setRestaurant({
@@ -28,6 +25,9 @@ const RestaurantMenu = () => {
       { id: 3, name: "masala dosa" },
       { id: 4, name: "idli" },
     ]);
+  }
+  if (!restaurant) {
+    return <Shimmer />;
   }
 
   console.log(Object.values(menu));

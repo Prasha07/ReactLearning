@@ -8,6 +8,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import About from "../components/About";
 import Contact from "../components/Contact";
 import RestaurantMenu from "../components/RestaurantMenu";
+import Profile from "../components/ProfileClass";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -34,6 +35,13 @@ const appRouter = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+        children: [
+          {
+            // path:"/profile", // It is wrong bcoz it will take as localhost:1234/profile
+            path: "profile", // It is right bcoz it will take as localhost:1234/about/profile
+            element: <Profile />,
+          },
+        ],
       },
       {
         path: "/contact",
